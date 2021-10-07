@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 #    registrations: 'users/registrations'
 #  }
   resources :users, only: [:index, :show]
-  root to: "documents#new"
+  resources :homes, only: [:index]
+  root to: "tops#index"
+  post '/tops/guest_sign_in', to: 'tops#guest_sign_in'
   resources :documents
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
