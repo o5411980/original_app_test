@@ -8,6 +8,6 @@ skip_before_action :authenticate_user!
       user.password = SecureRandom.urlsafe_base64
     end
     sign_in user
-    redirect_to homes_path, notice: 'ゲストユーザーとしてログイン'
+    redirect_to documents_path, notice: 'ゲストユーザーとしてログイン'
   end
 end
